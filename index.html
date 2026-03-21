@@ -3,109 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoFix PRO — Преміум СТО Київ | Ремонт авто 2026</title>
-  <meta name="description" content="Професійне СТО Київ. Ремонт ходової, ГРМ, АКПП, гальм. Ціни від 400 грн. Гарантія 24 місяці. +38 (067) 123-45-67"/>
+  <title>AutoFix PRO — Преміум СТО Київ | Ремонт авто</title>
+  <meta name="description" content="Професійне СТО в Києві. Ремонт ходової, двигуна, АКПП, гальм. Гарантія до 24 місяців. Чесні ціни. +38 (067) 123-45-67"/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg: #090d13;
-      --card: #10161e;
-      --text: #e5efff;
-      --text-light: #a0b0c8;
-      --primary: #f04343;
-      --primary-dark: #c53030;
-      --accent: #f4b400;
-      --border: #1e2a3b;
-      --gradient: linear-gradient(135deg, #f04343, #f97316);
+      --bg: #0a0e14;
+      --card: #11171f;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --primary: #ef4444;
+      --accent: #f59e0b;
+      --border: #1e293b;
+      --gradient: linear-gradient(135deg, #ef4444, #f97316);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family:'Inter', system-ui, sans-serif;
       background:var(--bg);
       color:var(--text);
-      line-height:1.65;
+      line-height:1.6;
     }
-    .container { max-width:1380px; margin:0 auto; padding:0 20px; }
+    .container { max-width:1400px; margin:0 auto; padding:0 20px; }
     
     header {
       position:fixed;
       top:0; left:0; right:0;
-      background:rgba(9,13,19,0.94);
-      backdrop-filter:blur(14px);
+      background:rgba(10,14,20,0.95);
+      backdrop-filter:blur(12px);
       z-index:1000;
       border-bottom:1px solid var(--border);
-      transition:all 0.3s;
+      transition:0.3s;
     }
-    header.scrolled { padding:8px 0; background:rgba(9,13,19,0.97); box-shadow:0 4px 20px rgba(0,0,0,0.6); }
+    header.scrolled { padding:10px 0; background:rgba(10,14,20,0.98); }
     .header-inner { display:flex; justify-content:space-between; align-items:center; padding:16px 0; }
     .logo {
-      font-size:clamp(28px, 7vw, 42px);
+      font-size:clamp(26px, 6vw, 38px);
       font-weight:800;
       background:var(--gradient);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
-    nav { display:flex; gap:32px; }
+    nav { display:flex; gap:28px; }
     nav a {
       color:var(--text);
       font-weight:500;
       text-decoration:none;
       transition:0.3s;
-      position:relative;
     }
     nav a:hover { color:var(--primary); }
-    nav a::after {
-      content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--primary); transition:0.3s;
-    }
-    nav a:hover::after { width:100%; }
     
-    .hamburger { display:none; font-size:36px; color:var(--primary); cursor:pointer; }
+    .hamburger { display:none; font-size:32px; color:var(--primary); cursor:pointer; }
     
     .mobile-menu {
       position:fixed; inset:0; background:var(--bg);
       transform:translateX(-100%);
       transition:transform 0.4s ease;
-      z-index:999; padding:100px 24px 40px;
+      z-index:999; padding-top:80px;
     }
     .mobile-menu.active { transform:translateX(0); }
     .mobile-menu a {
-      display:block; padding:18px 0;
-      font-size:24px; color:var(--text);
+      display:block; padding:20px 30px;
+      font-size:22px; color:var(--text);
       text-decoration:none;
       border-bottom:1px solid var(--border);
     }
     
     .hero {
       min-height:100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.55)),
-                  url('https://thumbs.dreamstime.com/b/modern-workshop-skylight-spacious-automotive-workshop-interior-featuring-natural-skylight-illumination-vehicles-lifts-425829899.jpg') center/cover no-repeat fixed;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.6)),
+                  url('https://thumbs.dreamstime.com/z/modern-auto-repair-garage-tools-equipment-neat-arrangement-view-inside-open-air-workshop-featuring-rows-378751164.jpg') center/cover no-repeat fixed;
       display:flex; align-items:center; text-align:center; color:white;
     }
-    .hero-content { max-width:960px; margin:0 auto; padding:0 20px; }
-    .hero h1 { font-size:clamp(54px, 10vw, 110px); font-weight:900; line-height:1.05; margin-bottom:28px; }
-    .hero p { font-size:clamp(20px, 4.5vw, 32px); margin-bottom:48px; opacity:0.95; }
+    .hero-content { max-width:900px; margin:0 auto; padding:0 20px; }
+    .hero h1 { font-size:clamp(50px, 9vw, 100px); font-weight:900; line-height:1.1; margin-bottom:24px; }
+    .hero p { font-size:clamp(20px, 4vw, 28px); margin-bottom:40px; }
     
     .btn {
-      padding:clamp(16px,4vw,20px) clamp(40px,6vw,60px);
+      padding:16px 48px;
       background:var(--gradient);
       color:white;
-      font-size:clamp(18px,4vw,22px); font-weight:700;
+      font-size:20px; font-weight:600;
       border-radius:12px; text-decoration:none;
       display:inline-block;
-      transition:0.4s;
-      box-shadow:0 10px 30px rgba(240,67,67,0.35);
+      transition:0.3s;
     }
-    .btn:hover { transform:translateY(-5px); box-shadow:0 18px 45px rgba(240,67,67,0.5); }
+    .btn:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(239,68,68,0.4); }
     
-    .section { padding:clamp(80px,12vw,160px) 0; }
+    .section { padding:clamp(80px, 12vw, 140px) 0; }
     h2 {
       text-align:center;
-      font-size:clamp(42px,8vw,72px);
+      font-size:clamp(40px, 7vw, 64px);
       font-weight:800;
-      margin-bottom:64px;
+      margin-bottom:60px;
       background:var(--gradient);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -113,89 +106,90 @@
     
     .grid {
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
       gap:32px;
     }
     .card {
       background:var(--card);
-      padding:clamp(28px,4vw,40px);
-      border-radius:20px;
+      padding:32px;
+      border-radius:16px;
       border:1px solid var(--border);
       transition:0.4s;
       text-align:center;
     }
-    .card:hover { transform:translateY(-14px); border-color:var(--primary); box-shadow:0 20px 50px rgba(240,67,67,0.2); }
-    .card h3 { font-size:clamp(22px,3vw,28px); color:var(--primary); margin-bottom:16px; }
+    .card:hover { transform:translateY(-12px); border-color:var(--primary); }
+    .card h3 { font-size:26px; color:var(--primary); margin-bottom:16px; }
     
-    .price-table {
-      width:100%; max-width:900px; margin:0 auto 48px;
-      border-collapse:collapse; font-size:clamp(16px,2.5vw,18px);
+    .services-list {
+      list-style:none;
+      font-size:19px;
+      max-width:800px;
+      margin:0 auto 40px;
     }
-    .price-table th, .price-table td {
-      padding:16px; border-bottom:1px solid var(--border); text-align:left;
+    .services-list li {
+      padding:16px 0;
+      border-bottom:1px solid var(--border);
     }
-    .price-table th { color:var(--primary); font-weight:700; }
     
     .gallery-grid {
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(360px,1fr));
-      gap:28px;
+      grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));
+      gap:24px;
     }
     .gallery-grid img {
-      width:100%; height:300px; object-fit:cover;
-      border-radius:18px; transition:0.5s;
+      width:100%; height:280px; object-fit:cover;
+      border-radius:16px; transition:0.5s;
     }
-    .gallery-grid img:hover { transform:scale(1.06); box-shadow:0 20px 50px rgba(0,0,0,0.5); }
+    .gallery-grid img:hover { transform:scale(1.05); }
     
     .reviews-grid {
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(340px,1fr));
-      gap:32px;
+      grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+      gap:28px;
     }
     .review-card {
       background:var(--card);
       padding:32px;
-      border-radius:18px;
-      border-left:6px solid var(--primary);
+      border-radius:16px;
+      border-left:5px solid var(--primary);
     }
-    .stars { color:#fbbf24; font-size:28px; margin-bottom:16px; }
+    .stars { color:#fbbf24; font-size:24px; margin-bottom:16px; }
+    
+    .map iframe { border-radius:16px; }
     
     .float-btns {
-      position:fixed; bottom:clamp(20px,5vw,32px); right:clamp(20px,5vw,32px);
-      display:flex; flex-direction:column; gap:20px; z-index:999;
+      position:fixed; bottom:24px; right:24px;
+      display:flex; flex-direction:column; gap:16px; z-index:999;
     }
     .float-btn {
-      width:clamp(60px,8vw,76px); height:clamp(60px,8vw,76px);
-      border-radius:50%;
+      width:64px; height:64px; border-radius:50%;
       background:var(--primary); color:white;
-      display:grid; place-items:center; font-size:clamp(26px,5vw,34px);
-      box-shadow:0 12px 36px rgba(0,0,0,0.6);
+      display:grid; place-items:center; font-size:28px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.5);
       transition:0.3s;
     }
-    .float-btn:hover { transform:scale(1.18); }
+    .float-btn:hover { transform:scale(1.15); }
     .float-btn.wa { background:#25D366; }
     
     footer {
-      background:#000; padding:100px 20px 60px;
+      background:#000; padding:80px 20px 40px;
       text-align:center; color:var(--text-light);
-      border-top:1px solid var(--border);
     }
     
-    @media (max-width:992px) {
+    @media (max-width: 992px) {
       nav { display:none; }
       .hamburger { display:block; }
       .grid, .gallery-grid, .reviews-grid { grid-template-columns:1fr; }
-      .hero h1 { font-size:clamp(48px,12vw,80px); }
-      .price-table th, .price-table td { font-size:16px; padding:12px; }
+      .hero h1 { font-size:clamp(44px, 10vw, 70px); }
+      .hero p { font-size:clamp(18px, 5vw, 24px); }
     }
     
-    @media (max-width:480px) {
+    @media (max-width: 480px) {
       .container { padding:0 16px; }
-      .btn { width:100%; text-align:center; }
-      .float-btns { bottom:16px; right:16px; gap:16px; }
-      .float-btn { width:64px; height:64px; font-size:28px; }
-      h2 { font-size:clamp(34px,9vw,50px); margin-bottom:48px; }
-      .price-table { font-size:15px; }
+      .btn { padding:14px 36px; font-size:18px; width:100%; text-align:center; }
+      .float-btns { bottom:16px; right:16px; }
+      .float-btn { width:56px; height:56px; font-size:24px; }
+      h2 { font-size:clamp(32px, 8vw, 48px); }
     }
   </style>
 </head>
@@ -205,7 +199,7 @@
   <div class="container header-inner">
     <div class="logo">AutoFix PRO</div>
     <nav>
-      <a href="#services">Послуги та ціни</a>
+      <a href="#services">Послуги</a>
       <a href="#advantages">Переваги</a>
       <a href="#gallery">Майстерня</a>
       <a href="#reviews">Відгуки</a>
@@ -216,7 +210,7 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('active')">Послуги та ціни</a>
+  <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('active')">Послуги</a>
   <a href="#advantages" onclick="document.getElementById('mobileMenu').classList.remove('active')">Переваги</a>
   <a href="#gallery" onclick="document.getElementById('mobileMenu').classList.remove('active')">Майстерня</a>
   <a href="#reviews" onclick="document.getElementById('mobileMenu').classList.remove('active')">Відгуки</a>
@@ -225,61 +219,58 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Преміум СТО Київ</h1>
-    <p>Якісний ремонт • Чесні ціни • Гарантія до 24 місяців</p>
-    <a href="tel:+380671234567" class="btn">Зателефонувати +38 (067) 123-45-67</a>
+    <h1>Преміум СТО в Києві</h1>
+    <p>Сучасне обладнання • Гарантія до 24 місяців • Чесний підхід до кожного авто</p>
+    <a href="tel:+380671234567" class="btn">Зателефонувати зараз</a>
   </div>
 </section>
 
 <section class="section" id="services">
   <div class="container">
-    <h2>Послуги та орієнтовні ціни (робота + матеріали від)</h2>
-    <table class="price-table">
-      <tr><th>Послуга</th><th>Ціна від, грн</th></tr>
-      <tr><td>Комп'ютерна діагностика</td><td>600–1000</td></tr>
-      <tr><td>Діагностика ходової частини</td><td>500–800</td></tr>
-      <tr><td>Заміна масла + фільтри (ТО)</td><td>600–1200</td></tr>
-      <tr><td>Заміна комплекту ГРМ (з помпою)</td><td>4200–8000</td></tr>
-      <tr><td>Ремонт ходової (заміна кульових, сайлентблоків, важелів)</td><td>750–2500 за елемент</td></tr>
-      <tr><td>Заміна гальмівних колодок (комплект)</td><td>600–1500</td></tr>
-      <tr><td>Заміна гальмівних дисків (пара)</td><td>1000–3100</td></tr>
-      <tr><td>Ремонт АКПП / часткова заміна масла</td><td>1500–8000+</td></tr>
-      <tr><td>Розвал-сходження 3D</td><td>800–1200</td></tr>
-      <tr><td>Заміна амортизаторів (пара)</td><td>1800–4000</td></tr>
-    </table>
-    <p style="text-align:center; font-size:clamp(18px,3vw,20px); color:var(--text-light);">
-      Ціни орієнтовні (2026 рік) — точну вартість розрахуємо після діагностики. Запчастини оригінал / якісний аналог.
-    </p>
+    <h2>Основні послуги СТО</h2>
+    <ul class="services-list">
+      <li>Комп'ютерна діагностика всіх систем (Bosch, Launch, Autel)</li>
+      <li>Ремонт ходової частини (заміна кульових, сайлентблоків, важелів, амортизаторів)</li>
+      <li>Ремонт та заміна ГРМ / ланцюга ГРМ</li>
+      <li>Ремонт АКПП, DSG, вариаторів</li>
+      <li>Заміна та ремонт гальмівної системи (диски, колодки, супорти)</li>
+      <li>Ремонт двигуна (капітальний, частковий, ГБЦ)</li>
+      <li>Розвал-сходження 3D Hunter</li>
+      <li>Заміна масла, фільтрів, технічне обслуговування</li>
+      <li>Ремонт підвіски, рульового управління</li>
+      <li>Електрика та електроніка авто</li>
+    </ul>
+    <p style="text-align:center; font-size:20px; color:var(--text-light);">...та багато іншого — телефонуйте, проконсультуємо безкоштовно</p>
   </div>
 </section>
 
 <section class="section" id="advantages">
   <div class="container">
-    <h2>Чому клієнти обирають AutoFix PRO</h2>
+    <h2>Наші переваги</h2>
     <div class="grid">
       <div class="card">
         <h3>Сучасне обладнання</h3>
-        <p>Bosch, Hunter 3D, Launch — тільки професійне</p>
+        <p>Bosch, Hunter 3D, Launch, професійний інструмент</p>
       </div>
       <div class="card">
-        <h3>Гарантія 24 місяці</h3>
-        <p>Письмовий договір на всі роботи</p>
+        <h3>Гарантія до 24 місяців</h3>
+        <p>Письмовий договір на роботи та запчастини</p>
       </div>
       <div class="card">
-        <h3>Майстри 10–18 років досвіду</h3>
-        <p>Спеціалізація на складних ремонтах</p>
+        <h3>Досвід команди</h3>
+        <p>Середній стаж майстрів — 12+ років</p>
       </div>
       <div class="card">
-        <h3>Прозорі ціни</h3>
-        <p>Фіксована вартість до початку — без сюрпризів</p>
+        <h3>Чесні ціни</h3>
+        <p>Без прихованих доплат, все прозоро</p>
       </div>
       <div class="card">
-        <h3>Чиста та комфортна майстерня</h3>
-        <p>Прибирання після кожного авто</p>
+        <h3>Чиста майстерня</h3>
+        <p>Професійне прибирання після кожного авто</p>
       </div>
       <div class="card">
-        <h3>Всі марки авто</h3>
-        <p>До 3.5 т, включаючи гібриди та електро</p>
+        <h3>Всі марки</h3>
+        <p>Європейські, японські, корейські, американські до 3,5 т</p>
       </div>
     </div>
   </div>
@@ -287,41 +278,46 @@
 
 <section class="section" id="gallery">
   <div class="container">
-    <h2>Наша майстерня в Києві</h2>
+    <h2>Наше СТО в Києві</h2>
     <div class="gallery-grid">
-      <img src="https://thumbs.dreamstime.com/z/modern-auto-repair-garage-tools-equipment-neat-arrangement-view-inside-open-air-workshop-featuring-rows-378751164.jpg" alt="Сучасна майстерня СТО Київ" loading="lazy">
-      <img src="https://thumbs.dreamstime.com/b/kirov-russia-october-car-service-area-multiple-lifts-equipment-large-workshop-located-busy-city-spacious-features-435438090.jpg" alt="Професійний автосервіс з підйомниками" loading="lazy">
-      <img src="https://thumbs.dreamstime.com/b/modern-workshop-skylight-spacious-automotive-workshop-interior-featuring-natural-skylight-illumination-vehicles-lifts-425829899.jpg" alt="Чистий бокс з природним освітленням" loading="lazy">
-      <img src="https://thumbs.dreamstime.com/b/car-hydraulic-lift-modern-auto-repair-shop-elevated-well-equipped-clean-garage-various-tools-machinery-visible-328761846.jpg" alt="Авто на підйомнику" loading="lazy">
-      <img src="https://c8.alamy.com/comp/2S33T2C/a-white-american-car-suspended-on-a-hydraulic-lift-in-a-professional-auto-repair-shop-the-workshop-is-filled-with-tools-and-equipment-indicating-an-2S33T2C.jpg" alt="Ремонт на гідравлічному підйомнику" loading="lazy">
+      <img src="https://thumbs.dreamstime.com/z/modern-auto-repair-garage-tools-equipment-neat-arrangement-view-inside-open-air-workshop-featuring-rows-378751164.jpg" alt="Сучасна майстерня СТО Київ з підйомниками" loading="lazy">
+      <img src="https://thumbs.dreamstime.com/b/kirov-russia-october-car-service-area-multiple-lifts-equipment-large-workshop-located-busy-city-spacious-features-435438090.jpg" alt="Професійний автосервіс з кількома постами" loading="lazy">
+      <img src="https://thumbs.dreamstime.com/b/modern-workshop-skylight-spacious-automotive-workshop-interior-featuring-natural-skylight-illumination-vehicles-lifts-425829899.jpg" alt="Великий чистий бокс СТО з природним світлом" loading="lazy">
+      <img src="https://thumbs.dreamstime.com/b/car-hydraulic-lift-modern-auto-repair-shop-elevated-well-equipped-clean-garage-various-tools-machinery-visible-328761846.jpg" alt="Авто на підйомнику в майстерні" loading="lazy">
       <img src="https://media.gettyimages.com/id/1164677320/photo/happy-customer-shaking-hands-with-auto-mechanic-in-a-workshop.jpg?s=1024x1024&w=gi&k=20&c=wTSebg3-kZ_IpUkxMcNRyk2cyfn0uaVluJC9CGlJXds=" alt="Задоволений клієнт з майстром" loading="lazy">
+      <img src="https://c8.alamy.com/comp/2S33T2C/a-white-american-car-suspended-on-a-hydraulic-lift-in-a-professional-auto-repair-shop-the-workshop-is-filled-with-tools-and-equipment-indicating-an-2S33T2C.jpg" alt="Ремонт авто на підйомнику" loading="lazy">
     </div>
   </div>
 </section>
 
 <section class="section" id="reviews">
   <div class="container">
-    <h2>Відгуки клієнтів</h2>
+    <h2>Відгуки наших клієнтів</h2>
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>Швидко зробили ходову на BMW X5. Все чесно, без нав'язування. Дуже рекомендую!</p>
+        <p>Швидко і якісно зробили ходову на BMW X5. Все пояснили, нічого зайвого не нав'язували. Дуже задоволений!</p>
         <strong>Олег П. — березень 2026</strong>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>Заміна ГРМ на Skoda — ідеально, чисто, професійно. Ціна реальна.</p>
+        <p>Замінили ГРМ на Skoda Octavia. Чесна ціна, чисто, професійно. Рекомендую всім знайомим!</p>
         <strong>Аліна К. — лютий 2026</strong>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>Ремонт АКПП Tiguan — рівень офісу, але в 2 рази дешевше.</p>
+        <p>Діагностика + ремонт АКПП на VW Tiguan. Рівень офіційного сервісу, але значно дешевше.</p>
         <strong>Віталій С. — січень 2026</strong>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>Гальма + підвіска на RAV4 — швидко та якісно. Дякую!</p>
+        <p>Ремонт підвіски та гальм на Toyota RAV4. Все зробили швидко, без прихованих платежів. Дякую!</p>
         <strong>Ігор М. — квітень 2026</strong>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Капітальний ремонт двигуна Audi A6. Майстри знають свою справу, гарантія реально працює.</p>
+        <strong>Марія В. — грудень 2025</strong>
       </div>
     </div>
   </div>
@@ -329,21 +325,21 @@
 
 <section class="section" id="map">
   <div class="container">
-    <h2>Ми знаходимося</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.5!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce5f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sKyiv%2C%20Ukraine!5e0!3m2!1suk!2sua!4v1740000000000" width="100%" height="500" style="border:0; border-radius:18px;" allowfullscreen="" loading="lazy"></iframe>
-    <p style="text-align:center; margin-top:32px; font-size:clamp(18px,3vw,20px);">Київ, вул. Прикладна, 12 (біля Окружної)</p>
+    <h2>Де ми знаходимося</h2>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.5!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce5f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sKyiv%2C%20Ukraine!5e0!3m2!1suk!2sua!4v1740000000000" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <p style="text-align:center; margin-top:24px; font-size:19px;">Київ, вул. Прикладна, 12 (біля Окружної дороги)</p>
   </div>
 </section>
 
 <div class="float-btns">
   <a href="tel:+380671234567" class="float-btn">📞</a>
-  <a href="https://wa.me/380671234567?text=Добрий+день%2C+цікавить+ремонт" class="float-btn wa">💬</a>
+  <a href="https://wa.me/380671234567?text=Добрий+день%2C+цікавить+ремонт+авто" class="float-btn wa">💬</a>
 </div>
 
 <footer>
   <div class="container">
     <p>AutoFix PRO © 2026 • Київ • вул. Прикладна, 12 • +38 (067) 123-45-67</p>
-    <p style="margin-top:16px;">Пн–Пт 8:00–20:00 | Сб 9:00–18:00 | Нд — за записом</p>
+    <p style="margin-top:12px;">Пн–Пт 8:00–20:00 | Сб 9:00–18:00 | Нд — за попереднім записом</p>
   </div>
 </footer>
 
