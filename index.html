@@ -1,1 +1,309 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoFix PRO — Преміум СТО Київ | Ремонт авто будь-якої складності</title>
+  <meta name="description" content="Професійний автосервіс у Києві. Діагностика, ремонт ходової, двигуна, АКПП, гальм. Гарантія до 24 міс. Запис онлайн за 30 сек. +38 (067) 123-45-67"/>
+  <meta name="keywords" content="СТО Київ, автосервіс Київ, ремонт авто Київ, діагностика, ходова, гальма, АКПП, двигун"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0a0e14;
+      --card: #11171f;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --primary: #ef4444;
+      --primary-dark: #b91c1c;
+      --accent: #f59e0b;
+      --border: #1e293b;
+      --gradient: linear-gradient(135deg, #ef4444, #f97316);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Inter', system-ui, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    .container { max-width:1440px; margin:0 auto; padding:0 24px; }
+    
+    header {
+      position:fixed;
+      inset:0 0 auto;
+      background:rgba(10,14,20,0.92);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      z-index:1000;
+      transition:0.4s;
+    }
+    header.scrolled { padding:12px 0; background:rgba(10,14,20,0.98); }
+    .header-inner { display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+    .logo {
+      font-size:clamp(28px, 5vw, 40px);
+      font-weight:800;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      letter-spacing:-1px;
+    }
+    nav { display:flex; gap:36px; }
+    nav a {
+      color:var(--text);
+      font-weight:500;
+      text-decoration:none;
+      transition:0.3s;
+      position:relative;
+    }
+    nav a::after {
+      content:''; position:absolute; inset:auto 0 0; height:2px; background:var(--primary); transform:scaleX(0); transition:0.3s;
+    }
+    nav a:hover { color:var(--primary); }
+    nav a:hover::after { transform:scaleX(1); }
+    .btn {
+      padding:14px 40px;
+      background:var(--gradient);
+      color:white;
+      font-weight:600;
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 8px 24px rgba(239,68,68,0.3);
+    }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(239,68,68,0.5); }
+    
+    .hero {
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      overflow:hidden;
+    }
+    .hero-video {
+      position:absolute; inset:0; object-fit:cover; z-index:-1; filter:brightness(0.45);
+    }
+    .hero-content { max-width:960px; padding:0 20px; }
+    .hero h1 {
+      font-size:clamp(64px, 10vw, 120px);
+      font-weight:900;
+      line-height:1.05;
+      margin-bottom:32px;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero p { font-size:clamp(24px, 4vw, 36px); margin-bottom:48px; opacity:0.9; }
+    
+    .section { padding:clamp(120px, 15vw, 180px) 0; }
+    h2 {
+      text-align:center;
+      font-size:clamp(48px, 8vw, 80px);
+      font-weight:800;
+      margin-bottom:80px;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+      gap:32px;
+    }
+    .card {
+      background:var(--card);
+      padding:40px 32px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      transition:0.4s;
+      text-align:center;
+    }
+    .card:hover {
+      transform:translateY(-16px);
+      border-color:var(--primary);
+      box-shadow:0 24px 48px rgba(239,68,68,0.15);
+    }
+    .card-icon { font-size:64px; margin-bottom:24px; color:var(--primary); }
+    .card h3 { font-size:28px; margin-bottom:16px; color:var(--primary); }
+    
+    .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(380px, 1fr));
+      gap:24px;
+    }
+    .gallery-grid img {
+      width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px;
+      transition:0.6s;
+    }
+    .gallery-grid img:hover { transform:scale(1.06); }
+    
+    .booking {
+      background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80') center/cover;
+      padding:120px 0;
+      text-align:center;
+      color:white;
+      border-radius:24px;
+      margin:80px 0;
+    }
+    .booking form { max-width:680px; margin:48px auto; display:grid; gap:20px; }
+    input, select, button {
+      padding:18px; border-radius:12px; border:1px solid #444; background:#1a1f2b; color:white; font-size:18px;
+    }
+    button { background:var(--gradient); border:none; font-weight:700; cursor:pointer; }
+    
+    footer {
+      background:#000;
+      padding:100px 0 60px;
+      text-align:center;
+      color:var(--text-light);
+      border-top:1px solid var(--border);
+    }
+    
+    .float-btns {
+      position:fixed; bottom:32px; right:32px; z-index:999; display:flex; flex-direction:column; gap:16px;
+    }
+    .float-btn {
+      width:68px; height:68px; border-radius:50%;
+      background:var(--primary); color:white;
+      display:grid; place-items:center; font-size:32px;
+      box-shadow:0 12px 32px rgba(0,0,0,0.6);
+      transition:0.3s;
+    }
+    .float-btn:hover { transform:scale(1.18); }
+    .float-btn.wa { background:#25D366; }
+    
+    @media (max-width:992px) {
+      nav { display:none; }
+      /* додати гамбургер-меню */
+    }
+  </style>
+</head>
+<body>
 
+<header id="header">
+  <div class="container header-inner">
+    <div class="logo">AutoFix PRO</div>
+    <nav>
+      <a href="#services">Послуги</a>
+      <a href="#advantages">Переваги</a>
+      <a href="#gallery">Майстерня</a>
+      <a href="#reviews">Відгуки</a>
+      <a href="#booking">Запис</a>
+    </nav>
+    <a href="tel:+380671234567" class="btn">+38 (067) 123-45-67</a>
+  </div>
+</header>
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-car-mechanic-working-on-a-car-engine-328-large.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Преміум СТО в Києві</h1>
+    <p>Ремонт будь-якої складності • Гарантія до 24 місяців • Запис онлайн за 30 секунд</p>
+    <a href="#booking" class="btn" style="font-size:24px; padding:20px 60px;">Записатися онлайн</a>
+  </div>
+</section>
+
+<section class="section" id="advantages">
+  <div class="container">
+    <h2>Чому обирають нас</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Оригінальне обладнання</h3>
+        <p>Bosch, Hunter, Launch, Texa — тільки професійний інструмент 2024–2025 рр.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Гарантія 24 місяці</h3>
+        <p>Письмовий договір + чек на кожну роботу та запчастину</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👷‍♂️</div>
+        <h3>Майстри з досвідом 10–18 років</h3>
+        <p>Спеціалізація на преміум та складних ремонтах</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💸</div>
+        <h3>Прозорі ціни</h3>
+        <p>Фіксована вартість до початку робіт — без сюрпризів</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧼</div>
+        <h3>Ідеальна чистота</h3>
+        <p>Сучасні бокси, прибирання після кожного авто</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚘</div>
+        <h3>Всі марки до 3.5 т</h3>
+        <p>Німецькі, японські, корейські, американські, електро та гібриди</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <h2>Наша майстерня</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80" alt="Сучасний бокс СТО" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1617781210350-146a6e6c9e0e?auto=format&fit=crop&q=80" alt="Робота майстра" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1485827404703-89b55c3b0b6e?auto=format&fit=crop&q=80" alt="Діагностика авто" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1502489597346-d8389a6b1f5a?auto=format&fit=crop&q=80" alt="Ремонт двигуна" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="booking">
+  <div class="container">
+    <h2 style="color:white;">Запишіться за 30 секунд</h2>
+    <form>
+      <input type="text" placeholder="Ваше ім'я" required>
+      <input type="tel" placeholder="Телефон" required>
+      <input type="text" placeholder="Марка та модель авто">
+      <select required>
+        <option value="">Оберіть послугу</option>
+        <option>Комп'ютерна діагностика</option>
+        <option>Ремонт ходової</option>
+        <option>Заміна ГРМ / ланцюга</option>
+        <option>Ремонт АКПП / DSG</option>
+        <option>Гальмівна система</option>
+        <option>Інше (опишіть нижче)</option>
+      </select>
+      <textarea placeholder="Опишіть проблему або побажаний час візиту" rows="4"></textarea>
+      <button type="submit" class="btn" style="width:100%; font-size:22px;">Отримати точний час та ціну</button>
+    </form>
+  </div>
+</section>
+
+<div class="float-btns">
+  <a href="tel:+380671234567" class="float-btn">📞</a>
+  <a href="https://wa.me/380671234567?text=Хочу+записатися+на+СТО" class="float-btn wa">💬</a>
+</div>
+
+<footer>
+  <div class="container">
+    <p>AutoFix PRO © 2026 • Київ, вул. Прикладна, 12 • +38 (067) 123-45-67</p>
+    <p>Пн–Пт 8:00–20:00 | Сб 9:00–18:00 | Нд — за записом</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+  });
+</script>
+</body>
+</html>
